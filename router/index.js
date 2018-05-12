@@ -1,5 +1,5 @@
 const Router = require('koa-router');
-
+const count = {count: 0};
 module.exports = (app) => {
     let router = new Router();
 
@@ -63,7 +63,9 @@ module.exports = (app) => {
     });
     router.get('/lb', async (ctx) => {
         setTimeout(() => {
-            ctx.body = Math.random() * ((10 - 1) + 1);
+            count.count++;
+            console.log('count:', count.count);
+            ctx.body = count.count;
         }, 2000)
     });
     // 装载
