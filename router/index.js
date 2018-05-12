@@ -64,7 +64,8 @@ module.exports = (app) => {
     router.get('/lb', async (ctx) => {
         setTimeout(() => {
             count.count++;
-            console.log('count:', count.count);
+            ctx.session.cookie = count.count;
+            console.log('ctx.session.cookie:', ctx.session.cookie);
             ctx.body = count.count;
         }, 2000)
     });
