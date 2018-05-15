@@ -4,13 +4,15 @@ module.exports = (function () {
         case 'dev':
             redis.host = '101.200.161.32';
             redis.port = '6379';
-            redis.option = {
+            redis.connect_timeout = 5000;
+            redis.auth_pass = '87ruxszzg5';
+            /* redis.option = {
                 connect_timeout: 5000,
                 auth_pass: '87ruxszzg5',
                 retry_strategy(options) {
                     console.log(options);
                 },
-            };
+            }; */
             break;
         default:
             redis.host = '127.0.0.1';

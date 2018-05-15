@@ -62,12 +62,16 @@ module.exports = (app) => {
         ctx.body = ctx.session.cookie;
     });
     router.get('/lb', async (ctx) => {
-        setTimeout(() => {
-            count.count++;
-            ctx.session.cookie = count.count;
-            console.log('ctx.session.cookie:', ctx.session.cookie);
-            ctx.body = count.count;
-        }, 2000)
+        console.log(count);
+        await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                count.count++;
+                resolve(count);
+            }, 2000)
+        })
+        console.log(count);
+        ctx.session.cookie = count.count;
+        ctx.body = count.count;
     });
     // 装载
     app.use(router.routes()).use(router.allowedMethods())
