@@ -6,7 +6,7 @@ module.exports = (function () {
             redis.port = '6379';
             redis.option = {
                 connect_timeout: 5000,
-                // auth_pass: 'ecarlife121',
+                auth_pass: '87ruxszzg5',
                 retry_strategy(options) {
                     console.log(options);
                 },
