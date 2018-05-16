@@ -24,7 +24,7 @@ const CONFIG = {
     rolling: false,
     store: (new redisStore(config.redis))
 };
-app.use(session(CONFIG, app));
+// app.use(session(CONFIG, app));
 app.use(views(path.join(__dirname, './views'), {
     extension: 'ejs',
 }));

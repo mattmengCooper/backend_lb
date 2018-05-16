@@ -69,7 +69,7 @@ module.exports = (app) => {
             }, 2000)
         })
         console.log(count);
-        ctx.session.cookie = count.count;
+        // ctx.session.cookie = count.count;
         ctx.body = count.count;
     });
     // 装载
