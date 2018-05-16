@@ -22,7 +22,7 @@ const CONFIG = {
     httpOnly: true,
     signed: true,
     rolling: false,
-    store: (new redisStore(config.redis)).set()
+    store: (new redisStore(config.redis))
 };
 app.use(session(CONFIG, app));
 app.use(views(path.join(__dirname, './views'), {
