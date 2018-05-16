@@ -62,7 +62,6 @@ module.exports = (app) => {
         ctx.body = ctx.session.cookie;
     });
     router.get('/lb', async (ctx) => {
-        console.log(count);
         await new Promise((resolve, reject) => {
             setTimeout(() => {
                 count.count++;
